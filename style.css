@@ -16,28 +16,41 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
   background: var(--dark);
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 button {
   font-family: inherit;
 }
 
+/* =====================================
+   SCREEN
+===================================== */
+
 .screen {
   display: none;
+  min-height: 100vh;
   min-height: 100svh;
   width: 100%;
+  height: auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   align-items: center;
   justify-content: center;
-  padding: 85px 22px 45px;
+  padding: 90px 24px 45px;
   animation: screenIn .8s ease both;
 }
 
@@ -118,7 +131,9 @@ button {
   letter-spacing: 2px;
 }
 
-/* OPENING */
+/* =====================================
+   OPENING MATRIX
+===================================== */
 
 #opening {
   background:
@@ -131,12 +146,17 @@ button {
   width: 100%;
   height: 100%;
   opacity: .8;
+  pointer-events: none;
 }
 
 .opening-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse, transparent 10%, rgba(8, 4, 13, .65) 100%);
+  background: radial-gradient(
+    ellipse,
+    transparent 10%,
+    rgba(8, 4, 13, .65) 100%
+  );
   pointer-events: none;
 }
 
@@ -181,6 +201,7 @@ button {
   font-family: "Orbitron", sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
+  line-height: 1.8;
 }
 
 .cursor {
@@ -198,7 +219,9 @@ button {
   margin-bottom: 35px;
 }
 
-/* BIRTHDAY */
+/* =====================================
+   BIRTHDAY
+===================================== */
 
 .birthday-screen {
   background:
@@ -255,7 +278,9 @@ button {
   margin: 20px 0 30px;
 }
 
-/* CAKE */
+/* =====================================
+   CAKE
+===================================== */
 
 .cake-screen {
   background:
@@ -264,10 +289,11 @@ button {
 }
 
 .section-content {
-  width: min(100%, 850px);
+  width: min(100%, 1000px);
   text-align: center;
   position: relative;
   z-index: 2;
+  margin: auto;
 }
 
 .section-title {
@@ -349,7 +375,13 @@ button {
   left: 104px;
   bottom: 125px;
   z-index: 5;
-  background: repeating-linear-gradient(45deg, #fff, #fff 5px, #f58dc5 5px, #f58dc5 9px);
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 5px,
+    #f58dc5 5px,
+    #f58dc5 9px
+  );
   border-radius: 3px;
 }
 
@@ -391,23 +423,29 @@ button {
   font-size: 12px;
 }
 
-/* LETTER */
+/* =====================================
+   LETTER
+===================================== */
 
 .letter-screen {
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
   background:
     radial-gradient(circle at center, #35152d 0%, #100713 70%);
+  justify-content: center;
+  align-items: center;
+  padding: 90px 24px 45px;
 }
 
 .letter-card {
-  width: min(100%, 580px);
-  padding: 38px clamp(22px, 6vw, 55px);
+  width: min(100%, 760px);
+  padding: 45px clamp(25px, 6vw, 65px);
   background: linear-gradient(145deg, #fff1f7, #f5dce9);
   color: #422438;
   box-shadow: 0 0 50px rgba(255, 79, 163, .2);
   text-align: center;
   position: relative;
+  border-radius: 3px;
 }
 
 .letter-card .small-label {
@@ -422,7 +460,7 @@ button {
 
 .letter-card h2 {
   font-family: "Great Vibes", cursive;
-  font-size: clamp(38px, 7vw, 54px);
+  font-size: clamp(40px, 5vw, 58px);
   font-weight: 400;
   margin-bottom: 25px;
 }
@@ -433,13 +471,13 @@ button {
 
 .letter-text {
   text-align: left;
-  font-size: 12px;
-  line-height: 2;
+  font-size: clamp(13px, 1.3vw, 15px);
+  line-height: 1.9;
   color: #644d5c;
 }
 
 .letter-text p {
-  margin-bottom: 16px;
+  margin-bottom: 19px;
 }
 
 .letter-text .english-message {
@@ -454,12 +492,14 @@ button {
   border-top: 1px solid rgba(120, 50, 90, .2);
   padding-top: 18px;
   margin-top: 20px;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 1px;
   color: #a44d7e;
 }
 
-/* GALLERY */
+/* =====================================
+   GALLERY
+===================================== */
 
 .gallery-screen {
   background:
@@ -467,21 +507,22 @@ button {
 }
 
 .gallery-screen .section-content {
-  max-width: 850px;
+  max-width: 1000px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
   margin: 35px auto;
 }
 
 .gallery-photo {
-  height: 190px;
+  height: clamp(150px, 20vw, 230px);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 126, 194, .5);
+  border-radius: 8px;
   background: #2b1028;
   box-shadow: 0 0 16px rgba(255, 79, 163, .1);
 }
@@ -509,7 +550,9 @@ button {
   font-size: 9px;
 }
 
-/* HEART COLLAGE */
+/* =====================================
+   HEART COLLAGE
+===================================== */
 
 .final-screen {
   background:
@@ -518,8 +561,8 @@ button {
 
 .heart-collage {
   position: relative;
-  width: min(320px, 80vw);
-  height: min(290px, 72vw);
+  width: min(360px, 80vw);
+  height: min(330px, 74vw);
   margin: 25px auto 35px;
 }
 
@@ -579,65 +622,208 @@ button {
   line-height: 1.8;
 }
 
-/* RESPONSIVE */
+/* =====================================
+   TABLET
+===================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .screen {
-    padding: 80px 17px 35px;
-  }
-
-  .small-label {
-    font-size: 8px;
-    letter-spacing: 2px;
+    padding: 85px 20px 40px;
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 9px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .gallery-photo {
-    height: 155px;
+    height: 190px;
+  }
+
+  .letter-screen {
+    padding: 85px 20px 40px;
   }
 
   .letter-card {
-    padding: 30px 22px;
+    width: 100%;
+    padding: 35px 28px;
   }
 
   .letter-text {
-    font-size: 11px;
+    font-size: 14px;
   }
+}
 
-  .heart-collage {
-    width: min(280px, 82vw);
-    height: min(255px, 75vw);
+/* =====================================
+   MOBILE / HP
+===================================== */
+
+@media (max-width: 600px) {
+  .screen {
+    padding: 78px 15px 32px;
   }
 
   .sound-button {
     top: 12px;
     right: 12px;
+    padding: 10px 14px;
   }
-}
 
-@media (max-width: 360px) {
+  .small-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+
+  .opening-content {
+    width: 100%;
+  }
+
+  .terminal {
+    font-size: 9px;
+    line-height: 1.8;
+    margin: 25px auto;
+  }
+
+  .birthday-month {
+    letter-spacing: 4px;
+  }
+
+  .happy-title {
+    font-size: clamp(34px, 10vw, 55px);
+  }
+
+  .fitri-name {
+    font-size: clamp(42px, 12vw, 60px);
+  }
+
+  .section-title {
+    font-size: 52px;
+  }
+
+  /* SURAT HP */
+
+  .letter-screen {
+    justify-content: flex-start;
+    padding: 80px 14px 35px;
+    gap: 22px;
+  }
+
+  .letter-card {
+    width: 100%;
+    padding: 28px 20px;
+    border-radius: 3px;
+  }
+
+  .letter-heart {
+    font-size: 38px;
+    margin-bottom: 8px;
+  }
+
+  .letter-card h2 {
+    font-size: clamp(35px, 9vw, 46px);
+    margin-bottom: 22px;
+  }
+
+  .letter-text {
+    font-size: 13px;
+    line-height: 1.9;
+    text-align: left;
+  }
+
+  .letter-text p {
+    margin-bottom: 16px;
+  }
+
+  .letter-footer {
+    flex-wrap: wrap;
+    font-size: 8px;
+    letter-spacing: .7px;
+    padding-top: 15px;
+  }
+
+  .letter-screen > .main-button {
+    max-width: 100%;
+  }
+
+  /* GALERI HP */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 25px auto;
+  }
+
   .gallery-photo {
-    height: 130px;
+    height: clamp(135px, 43vw, 190px);
+  }
+
+  .gallery-photo figcaption {
+    padding: 6px;
+  }
+
+  /* KOLEKSI FOTO */
+
+  .heart-collage {
+    width: min(290px, 82vw);
+    height: min(265px, 75vw);
+    margin: 22px auto 30px;
+  }
+
+  .final-title {
+    font-size: clamp(20px, 6vw, 30px);
+  }
+
+  .final-date {
+    letter-spacing: 3px;
   }
 
   .main-button {
-    padding: 13px 17px;
+    max-width: 100%;
+    padding: 14px 18px;
     font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* =====================================
+   HP LAYAR KECIL
+===================================== */
+
+@media (max-width: 360px) {
+  .letter-card {
+    padding: 25px 16px;
+  }
+
+  .letter-text {
+    font-size: 12px;
+  }
+
+  .gallery-photo {
+    height: 135px;
   }
 
   .letter-footer {
     font-size: 7px;
   }
+
+  .main-button {
+    padding: 12px 14px;
+  }
 }
 
-@media (max-height: 700px) and (min-width: 601px) {
+/* =====================================
+   LAPTOP LAYAR PENDEK
+===================================== */
+
+@media (min-width: 769px) and (max-height: 700px) {
   .screen {
-    padding-top: 65px;
-    padding-bottom: 25px;
+    padding-top: 75px;
+    padding-bottom: 35px;
+  }
+
+  .letter-screen {
+    justify-content: flex-start;
   }
 
   .cake-scene {
@@ -650,11 +836,5 @@ button {
 
   .gallery-photo {
     height: 140px;
-  }
-
-  .heart-collage {
-    transform: scale(.8);
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
