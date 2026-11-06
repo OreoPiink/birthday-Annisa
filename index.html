@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08040d">
+  <title>Happy Birthday Fitri Annisa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- MUSIK -->
+  <audio id="backgroundMusic" src="sound-tiktok.mp3" loop preload="auto" autoplay></audio>
+
+  <button class="sound-button" id="soundButton" aria-label="Nyalakan musik">
+    <span id="soundIcon">♫</span>
+    <span id="soundLabel">MUSIC OFF</span>
+  </button>
+
+  <!-- PEMBUKAAN DIGITAL -->
+  <section class="screen active" id="opening">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="opening-overlay"></div>
+
+    <div class="opening-content">
+      <p class="small-label">A SPECIAL DIGITAL EXPERIENCE</p>
+      <h1 class="glitch" data-text="SYSTEM ONLINE">SYSTEM ONLINE</h1>
+
+      <div class="terminal">
+        <p id="typingText"></p>
+        <span class="cursor">_</span>
+      </div>
+
+      <p class="opening-date">07 · 11 · 2026</p>
+
+      <button class="main-button" id="startButton">
+        OPEN YOUR SURPRISE <span>↗</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN DAN HAPPY BIRTHDAY -->
+  <section class="screen birthday-screen" id="birthday">
+    <div class="stars"></div>
+
+    <div class="birthday-content">
+      <p class="small-label">A SPECIAL DAY HAS ARRIVED</p>
+
+      <div class="birthday-number">07</div>
+      <p class="birthday-month">NOVEMBER 2026</p>
+
+      <h1 class="happy-title">
+        HAPPY<br>
+        <span>BIRTHDAY</span>
+      </h1>
+
+      <h2 class="fitri-name">FITRI ANNISA</h2>
+
+      <p class="birthday-caption">
+        Today is all about you. ✦
+      </p>
+
+      <button class="main-button next-button" data-next="cake">
+        CONTINUE <span>↓</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- KUE ULANG TAHUN -->
+  <section class="screen cake-screen" id="cake">
+    <div class="section-content">
+      <p class="small-label">A LITTLE CELEBRATION</p>
+
+      <h2 class="section-title">
+        Make a <span>wish.</span>
+      </h2>
+
+      <p class="section-description">
+        A special cake for a special person.
+      </p>
+
+      <div class="cake-scene">
+        <div class="cake">
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+              <div class="wick"></div>
+          </div>
+          <div class="cake-top"></div>
+          <div class="cake-middle"></div>
+          <div class="cake-bottom"></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+
+      <p class="wish-instruction" id="wishInstruction">
+        Tekan tombol di bawah untuk meniup lilin.
+      </p>
+
+      <button class="main-button" id="blowButton">
+        MAKE A WISH ✨
+      </button>
+
+      <button class="text-button next-button" data-next="letter">
+        LANJUTKAN →
+      </button>
+    </div>
+  </section>
+
+  <!-- SURAT ULANG TAHUN -->
+  <section class="screen letter-screen" id="letter">
+    <div class="letter-card">
+      <p class="small-label">A MESSAGE FOR YOU</p>
+
+      <div class="letter-heart">♡</div>
+
+      <h2>Dear <span>Fitri Annisa,</span></h2>
+
+      <div class="letter-text">
+        <p>
+          Selamat ulang tahun, Fitri Annisa.
+        </p>
+
+        <p>
+          Semoga di usia yang baru ini, kamu selalu diberikan
+          kesehatan, kebahagiaan, dan kekuatan untuk melewati
+          setiap perjalanan hidup.
+        </p>
+
+        <p>
+          Semoga semua impian yang sedang kamu perjuangkan
+          perlahan menemukan jalannya. Semoga selalu ada
+          alasan untuk tersenyum, bahkan di hari-hari yang
+          terasa berat.
+        </p>
+
+        <p>
+          Teruslah menjadi pribadi yang indah dengan caramu
+          sendiri. Jangan pernah berhenti percaya bahwa
+          hal-hal baik sedang menantimu.
+        </p>
+
+        <p class="english-message">
+          May your life be filled with endless love,
+          beautiful moments, and wonderful possibilities.
+        </p>
+      </div>
+
+      <div class="letter-footer">
+        <span>WITH LOVE & BEST WISHES</span>
+        <span>07 · 11 · 2026</span>
+      </div>
+    </div>
+
+    <button class="main-button next-button" data-next="gallery">
+      SEE YOUR PHOTOS <span>↗</span>
+    </button>
+  </section>
+
+  <!-- GALERI FOTO -->
+  <section class="screen gallery-screen" id="gallery">
+    <div class="section-content">
+      <p class="small-label">A COLLECTION OF YOU</p>
+
+      <h2 class="section-title">
+       <span>l like This Photo.</span>
+      </h2>
+
+      <p class="section-description">
+        Every picture tells its own little story.
+      </p>
+
+      <div class="gallery-grid">
+        <figure class="gallery-photo photo-1">
+          <img src="images/fitri-1.jpeg" alt="Foto Fitri 1">
+          <figcaption>01</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-2">
+          <img src="images/fitri-2.jpeg" alt="Foto Fitri 2">
+          <figcaption>02</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-3">
+          <img src="images/fitri-3.jpeg" alt="Foto Fitri 3">
+          <figcaption>03</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-4">
+          <img src="images/fitri- 4.jpeg" alt="Foto Fitri 4">
+          <figcaption>04</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-5">
+          <img src="images/fitri-5.jpeg" alt="Foto Fitri 5">
+          <figcaption>05</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-6">
+          <img src="images/fitri-6.jpeg" alt="Foto Fitri 6">
+          <figcaption>06</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-7">
+          <img src="images/fitri-7.jpeg" alt="Foto Fitri 7">
+          <figcaption>07</figcaption>
+        </figure>
+
+        <figure class="gallery-photo photo-8">
+          <img src="images/fitri-8.jpeg" alt="Foto Fitri 8">
+          <figcaption>08</figcaption>
+        </figure>
+      </div>
+
+      <button class="main-button next-button" data-next="final">
+        ONE LAST SURPRISE <span>♡</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- PENUTUP HATI -->
+  <section class="screen final-screen" id="final">
+    <div class="section-content">
+      <p class="small-label">A FINAL LITTLE SURPRISE</p>
+
+      <h2 class="section-title">
+         <span>Beautiful</span>
+      </h2>
+
+      <div class="heart-collage">
+        <div class="heart-photo hp1"><img src="images/fitri-1.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp2"><img src="images/fitri-2.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp3"><img src="images/fitri-3.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp4"><img src="images/fitri- 4.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp5"><img src="images/fitri-5.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp6"><img src="images/fitri-6.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp7"><img src="images/fitri-7.jpeg" alt="Fitri"></div>
+        <div class="heart-photo hp8"><img src="images/fitri-8.jpeg" alt="Fitri"></div>
+      </div>
+
+      <h1 class="final-title">
+        HAPPY BIRTHDAY<br>
+        <span>FITRI ANNISA</span>
+      </h1>
+
+      <p class="final-date">07 NOVEMBER 2026</p>
+
+      <p class="final-message">
+        Keep smiling, keep shining, and keep being wonderful.
+      </p>
+
+      <button class="main-button" id="replayButton">
+        REPLAY EXPERIENCE ↻
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
